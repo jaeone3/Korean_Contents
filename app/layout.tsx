@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "Learn Korean",
   },
+  verification: {
+    google: "VNmuSJyZYEMzh2Y112N8YEeLXAyYjbi5VLNKLmmUxf4",
+  },
   other: {
     "apple-itunes-app": `app-id=${APP_STORE_ID}`,
   },
