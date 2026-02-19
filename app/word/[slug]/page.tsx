@@ -6,10 +6,10 @@ import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/constants";
 import JsonLd from "@/components/seo/JsonLd";
 import FakeAudioPlayer from "@/components/conversion/FakeAudioPlayer";
 
-// SSG: 빌드 시 모든 페이지 정적 생성
+// SSG: 상위 10개만 빌드 시 생성, 나머지는 ISR (요청 시 생성 후 캐싱)
 export async function generateStaticParams() {
   const words = getAllWords();
-  return words.map((word) => ({
+  return words.slice(0, 10).map((word) => ({
     slug: word.slug,
   }));
 }
